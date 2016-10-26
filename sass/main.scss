@@ -1,9 +1,239 @@
 @import "compass/reset";
 
+
+//varibless
+$t: transparent;
+$w: #fff;
+$b: #000;
+$ligh_grey: #999;
+$dark_grey: #333;
+$bg_grey: #edeef2;
+$grey: #3f3f3f;
+$blue_btn: #00aff0;
+$blue_bg: #00a3e4;
+$ligh_purple: #080266;
+$purple: #112a80;
+$dots_purple: #ac3697;
+$lang_purple: #ab3496;
+$s_title_bd: #00aded;
+
+
+@mixin font($color, $size, $weight: 400) {
+    @if $weight != "" {
+        color: $color;
+        font-size: $size;
+        font-weight: $weight;
+    }
+}
+
+@mixin box-shadow($size, $blur, $color, $opacity) {
+  -webkit-box-shadow: 0px $size $blur rgba($color, $opacity);
+  -moz-box-shadow:    0px $size $blur rgba($color, $opacity);
+  box-shadow:         0px $size $blur rgba($color, $opacity);
+}
+
+@mixin transition() {
+  -webkit-transition: all .3s;
+          transition: all .3s;
+}
+
+@mixin make-border ($color, $width, $radius) {
+    border: $width solid $color;
+    border-radius: $radius;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: Arial;
+}
+
+// header
+.header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: $w;
+    @include box-shadow(3px, 7px, $b, .25);
+    &_logo {
+
+    }
+    &_sup {
+        float: right;
+        margin-right: 10px;
+        &__text {
+            text-transform: uppercase;
+            line-height: 67px;
+            margin-right: 10px;
+            @include font($ligh_grey, 20px);
+        }
+        &__img {
+            position: relative;
+            top: 5px;
+            width: 125px;
+            height: 30px;
+        }
+    }
+    &_lang-switcher {
+        float: right;
+        &__item {
+            line-height: 67px;
+            @include font($grey, 12pt);
+            text-transform: uppercase;
+            margin-left: 12px;
+            &.active {
+                text-decoration: none;
+                color: $lang_purple;
+            }
+        }
+    }
+}
+
+#s1 {
+    background: url(../img/MainImage.png) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    padding-bottom: 150px;
+}
+.bubble {
+    margin-bottom: 50px;
+}
+.intro {
+    width: 60%;
+    &_st {
+        @include font($purple, 70pt, 900);
+        margin: 20px 0;
+    }
+    &_nd {
+        @include font($purple, 38pt, 700);
+        line-height: 1.25;
+    }
+}
+
+#s2 {
+    padding: 80px 0;
+    background: $w;
+}
+.offer_text {
+    @include font($grey, 20pt);
+    margin-bottom: 80px;
+    line-height: 1.3;
+}
+.offer_info {
+    @include font($ligh_purple, 14pt);
+    margin-bottom: 20px;
+}
+
+#s3 {
+    background: $bg_grey;
+    padding: 90px 0;
+}
+.info_text {
+    @include font($b, 18pt);
+    margin-bottom: 50px;
+}
+.tick_thumb {
+    background: #fff;
+    margin-bottom: 12px;
+    @include box-shadow(1px, 1px, $b, .3);
+    &__cap {
+        padding-bottom: 20px;
+    }
+}
+.ticket_title {
+    @include font($ligh_purple, 15pt);
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+#s4 {
+    background: $blue_bg;
+    padding: 50px 0;
+}
+
+// components
+.container {
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+section {
+    clear: both;
+}
+.text-center {
+    text-align: center;
+}
+.jumbotron {
+    position: relative;
+    width: 100%;
+    background: $bg_grey;
+    &.sky {
+        background: url(../img/sky.jpg) no-repeat center center;
+        background-size: cover;
+    }
+}
+.s_title {
+    @include font($purple, 36pt, 700);
+    margin-bottom: 30px;
+    &_bd {
+        position: relative;
+        margin-bottom: 100px;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            margin-left: -158px;
+            width: 316px;
+            height: 1px;
+            background: $blue_bg;
+        }
+    }
+}
+img {
+    max-width: 100%;
+}
+
+.col_3 {
+    position: relative;
+    width: 33.3%;
+    padding: 0 5px;
+    float: left;
+}
+.row {
+
+}
+
+
+.btn {
+    @include font($blue_btn, 13pt, 600);
+    padding: 5.5px 37px;
+    margin-bottom: 0;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 2px solid $blue_btn;
+    background: $t;
+    @include transition;
+    outline: none;
+    &:hover, &:active {
+        color: $w;
+        background: $blue_btn;
+    }
 }
