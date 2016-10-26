@@ -10,6 +10,7 @@ $dark_grey: #333;
 $bg_grey: #edeef2;
 $bg_s1: #e7e7e7;
 $grey: #3f3f3f;
+$ft_border: #b8b9bc;
 $blue_btn: #00aff0;
 $blue_bg: #00a3e4;
 $ligh_purple: #080266;
@@ -153,22 +154,22 @@ body {
 }
 .offer_text {
     @include font($grey, 16pt);
-    margin-bottom: 99px;
+    margin-bottom: 90px;
     line-height: 1.4;
     letter-spacing: -.6px;
 }
 .offer_info {
-    @include font($ligh_purple, 10pt);
-    margin-bottom: 29px;
-    letter-spacing: -.6px;
+    @include font($ligh_purple, 11pt);
+    margin-bottom: 37px;
+    letter-spacing: -.2px;
 }
 
 #s3 {
     background: $bg_grey;
-    padding: 90px 0;
+    padding: 100px 0;
 }
 .info_text {
-    @include font($b, 16pt);
+    @include font($b, 13pt);
     margin-bottom: 50px;
 }
 .tick_thumb {
@@ -183,7 +184,7 @@ body {
         padding-bottom: 20px;
     }
     .tick_title {
-        margin-top: 25px;
+        margin-top: 26px;
         margin-bottom: 20px;
     }
     &.full {
@@ -212,39 +213,84 @@ body {
 
 #s4 {
     background: $blue_bg;
-    padding: 50px 0;
+    padding: 52px 0 110px;
 
-    .info_text{color: $w;}
+    .info_text {
+        color: $w;
+        margin-bottom: 40px;
+    }
+
+    .swiper-pagination {
+        width: 100%;
+        bottom: -65px;
+    }
+    .swiper-pagination-bullet {
+        width: 15px;
+        height: 15px;
+        margin: 0px 5px;
+        opacity: 1;
+        background: $w;
+        @include transition;
+        &-active {
+            background: $dots_purple;
+        }
+    }
 }
 
 .jumbotron_text {
     @include font($grey, 12.5pt);
-    line-height: 1.5;
+    line-height: 1.65;
 }
 
 #s5 {
     padding: 100px 0;
 }
 .round_icons {
-    margin-top: 55px;
-    margin-bottom: 45px;
+    margin-top: 50px;
+    margin-bottom: 35px;
 }
 .icon_text {
     @include font($ligh_purple, 12pt, 600);
-    line-height: 1.6;
+    line-height: 1.75;
+    margin-bottom: 65px;
 }
 
 #s6{
     background: $bg_grey;
     padding-top: 110px;
+    padding-bottom: 57px;
+}
+.caption {
+    @include font($ligh_purple, 14pt, 600);
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+.desc_text {
+    @include font($dark_grey, 12pt);
+    line-height: 1.65;
+    letter-spacing: -0.75pt;
 }
 
 
-
-
-
-
-
+.footer {
+    position: relative;
+    background: $bg_grey;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    max-height: 170px;
+    border-top: 1px solid $ft_border;
+}
+.f_logo {
+    display: inline-block;
+    width: 175px;
+    height: 43px;
+    margin-bottom: 22px;
+    background: url(../img/UtairLogo.svg) no-repeat center center;
+    background-size: cover;
+}
+.copyright {
+    @include font($dark_grey, 10pt);
+}
 
 
 // components
@@ -265,7 +311,7 @@ section {
     width: 100%;
     background: $bg_grey;
     padding: 100px 0;
-    &.sky {
+    &_sky {
         background: url(../img/sky.jpg) no-repeat center center;
         background-size: cover;
         padding: 0;
@@ -278,8 +324,7 @@ section {
 }
 .s_title {
     @include font($purple, 28pt, 700);
-    margin-bottom: 30px;
-    letter-spacing: -.8px;
+    margin-bottom: 35px;
     &_bd {
         position: relative;
         margin-bottom: 85px;
@@ -298,7 +343,11 @@ section {
 img {
     max-width: 100%;
 }
-
+.row {
+    margin-right: -10px;
+    margin-left: -10px;
+    @extend %clearfix;
+}
 .col_2 {
     position: relative;
     width: 50%;
@@ -310,9 +359,6 @@ img {
     width: 33.3%;
     padding: 0 5px;
     float: left;
-}
-.row {
-
 }
 
 

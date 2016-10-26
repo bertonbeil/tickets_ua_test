@@ -16,8 +16,8 @@
     <div class="container">
         <a href="" class="header_logo"></a>
         <span class="header_lang-switcher">
-          <a href="" class="header_lang-switcher__item active">рус</a>
-          <a href="" class="header_lang-switcher__item ">eng</a>
+          <a href="" class="header_lang-switcher__item">рус</a>
+          <a href="" class="header_lang-switcher__item active">eng</a>
         </span>
         <span class="header_sup">
             <span class="header_sup__text">Jointly with</span>
@@ -30,7 +30,6 @@
 <!-- section 1 intro -->
 <section id="s1">
     <div class="container">
-
         <img src="img/MainImage2.png" alt="" class="bubble">
         <div class="intro">
             <h1 class="intro_st">Shh!..</h1>
@@ -60,7 +59,7 @@
 <!--// section 2 -->
 
 <!-- sky and plan -->
-<div class="jumbotron sky text-center">
+<div class="jumbotron jumbotron_sky text-center">
     <img src="img/Airplane.png" alt="" class="plan">
 </div>
 <!--// sky and plan -->
@@ -112,6 +111,33 @@
                 </div>
             </div>
         </div>
+        <div class="col_3">
+            <div class="tick_thumb sm">
+                <img src="img/EGO.png" alt="" class="tick_img">
+                <div class="tick_cap">
+                    <h3 class="tick_title">Moscow - Tyumen</h3>
+                    <button class="btn">Book</button>
+                </div>
+            </div>
+        </div>
+        <div class="col_3">
+            <div class="tick_thumb sm">
+                <img src="img/EGO.png" alt="" class="tick_img">
+                <div class="tick_cap">
+                    <h3 class="tick_title">Moscow - Tyumen</h3>
+                    <button class="btn">Book</button>
+                </div>
+            </div>
+        </div>
+        <div class="col_3">
+            <div class="tick_thumb sm">
+                <img src="img/EGO.png" alt="" class="tick_img">
+                <div class="tick_cap">
+                    <h3 class="tick_title">Moscow - Tyumen</h3>
+                    <button class="btn">Book</button>
+                </div>
+            </div>
+        </div>
         <!--// offer thumb -->
 
     </div>
@@ -124,13 +150,49 @@
         <p class="info_text">Minimum ticket price is RUB 1790*</p>
 
         <!-- offer slider -->
-        <div class="tick_thumb full">
-            <img src="img/MMK.png" alt="" class="tick_img">
-            <div class="tick_cap">
-                <h3 class="tick_title">Moscow - Tyumen</h3>
-                <button class="btn">Book</button>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="tick_thumb full">
+                        <img src="img/MMK.png" alt="" class="tick_img">
+                        <div class="tick_cap">
+                            <h3 class="tick_title">Moscow - Tyumen</h3>
+                            <button class="btn">Book</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="tick_thumb full">
+                        <img src="img/MMK.png" alt="" class="tick_img">
+                        <div class="tick_cap">
+                            <h3 class="tick_title">Moscow - Tyumen</h3>
+                            <button class="btn">Book</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="tick_thumb full">
+                        <img src="img/MMK.png" alt="" class="tick_img">
+                        <div class="tick_cap">
+                            <h3 class="tick_title">Moscow - Tyumen</h3>
+                            <button class="btn">Book</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="tick_thumb full">
+                        <img src="img/MMK.png" alt="" class="tick_img">
+                        <div class="tick_cap">
+                            <h3 class="tick_title">Moscow - Tyumen</h3>
+                            <button class="btn">Book</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+
         <!--// offer slider -->
     </div>
 </section>
@@ -183,32 +245,35 @@
 <!-- section 6 -->
 <section id="s6">
     <div class="container">
-        <div class="col_2">
-            <img src="img/Stewardess.png" alt="" class="rs_img">
-            <h3 class="bold">UTair company today</h3>
-            <p class="sample_text">
-                The UTair airline company is the parent of UTair Group – companies operating passenger and cargo air carriages (on planes and helicopters), as well as providing aircraft repair and technical maintenance services, personnel training, serving flights, and selling air carriages. The headquarters are located in Surgut. UTair was included in the IOSA operators registry as of 2008. The airline company's hub airport is Vnukovo (Moscow), which accommodates more than 160 UTair flights every day.
-            </p>
-        </div>
-        <div class="col_2">
-            <img src="img/AirCraft.png" alt="" class="rs_img">
-            <h3 class="bold">The best regional airline of Russia</h3>
-            <p class="sample_text">
-                The UTair company was was awarded Business Traveller Russia and CIS Awards 2016 in the Best Regional Airline of Russia and the CIS nomination. For more than 30 years, Business Travel Awards has been one of the major awards which is annually given for outstanding achievements and innovations in the business travel industry.
-            </p>
+        <div class="row">
+            <div class="col_2">
+                <img src="img/Stewardess.png" alt="" class="rs_img">
+                <h3 class="caption">UTair company today</h3>
+                <p class="desc_text">
+                    The UTair airline company is the parent of UTair Group – companies operating passenger and cargo air carriages (on planes and helicopters), as well as providing aircraft repair and technical maintenance services, personnel training, serving flights, and selling air carriages. The headquarters are located in Surgut. UTair was included in the IOSA operators registry as of 2008. The airline company's hub airport is Vnukovo (Moscow), which accommodates more than 160 UTair flights every day.
+                </p>
+            </div>
+            <div class="col_2">
+                <img src="img/AirCraft.png" alt="" class="rs_img">
+                <h3 class="caption">The best regional airline of Russia</h3>
+                <p class="desc_text">
+                    The UTair company was was awarded Business Traveller Russia and CIS Awards 2016 in the Best Regional Airline of Russia and the CIS nomination. For more than 30 years, Business Travel Awards has been one of the major awards which is annually given for outstanding achievements and innovations in the business travel industry.
+                </p>
+            </div>
         </div>
     </div>
 </section>
 <!--// section 6 -->
 
 <!-- footer -->
-<footer>
-    <div class="container">
+<footer class="footer">
+    <div class="container text-center">
         <a href="" class="f_logo"></a>
-        <p class="copyright">
+        <br>
+        <small class="copyright">
             2008-2016 Tickets.ru <br>
-            Сервис онлайн бронирования
-        </p>
+            Online booking service
+        </small>
     </div>
 </footer>
 <!--// footer -->
