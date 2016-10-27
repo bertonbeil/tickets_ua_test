@@ -737,3 +737,21 @@ img {
     padding: 0 20px;
   }
 }
+@media (max-width: 400px) {
+  /* line 569, ../sass/main.scss */
+  .header_logo {
+    height: 13px;
+    min-width: 100px;
+    margin-top: 30px;
+  }
+  /* line 574, ../sass/main.scss */
+  .header_sup {
+    margin-top: -8px;
+    margin-left: -55.5px;
+  }
+  /* line 577, ../sass/main.scss */
+  .header_sup__img {
+    width: 110px;
+    height: 30px;
+  }
+}

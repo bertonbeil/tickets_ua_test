@@ -76,7 +76,6 @@ $(document).ready(function () {
                         lgBlock.removeClass('open');
                     }
                     var current = $(this).text().toUpperCase();
-                    // alert('You switch to ' + current + ' language');
                 }
 
             });
@@ -85,7 +84,6 @@ $(document).ready(function () {
             $(this).find('a').on('click', function (e) {
                 $(this).addClass('active').siblings().removeClass('active');
                 var current = $(this).text().toUpperCase();
-                alert('You switch to ' + current + ' language');
             });
         }
 
