@@ -51,4 +51,44 @@ $(document).ready(function () {
         centeredSlides: true
     });
 
+    $('button.btn').on('click', function (e) {
+        e.preventDefault();
+        var info = $(this).prev('h3').text();
+        var self = this;
+
+        confirm('You really wanna by ticket ' + info + ' ?');
+    });
+
+// lang switch
+    $('.header_lang-switcher').on('click', function (e) {
+        e.preventDefault();
+        var width = $(window).outerWidth();
+
+        if (width <= 768 && !$(this).hasClass('open')) {
+            $(this).addClass('open');
+            $(this).find('a').on('click', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                if (!$(this).hasClass('active')) {
+                    var lgBlock = $('.header_lang-switcher');
+                    $(this).addClass('active').siblings().removeClass('active');
+                    if($(this).parent().hasClass('open')) {
+                        lgBlock.removeClass('open');
+                    }
+                    var current = $(this).text().toUpperCase();
+                    // alert('You switch to ' + current + ' language');
+                }
+
+            });
+        } else {
+            e.preventDefault();
+            $(this).find('a').on('click', function (e) {
+                $(this).addClass('active').siblings().removeClass('active');
+                var current = $(this).text().toUpperCase();
+                alert('You switch to ' + current + ' language');
+            });
+        }
+
+    });
+
 });

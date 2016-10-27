@@ -9,6 +9,7 @@ $ligh_grey: #999;
 $dark_grey: #333;
 $bg_grey: #edeef2;
 $bg_s1: #e7e7e7;
+$lg_switch_bg: #f0f0f0;
 $grey: #3f3f3f;
 $ft_border: #b8b9bc;
 $blue_btn: #00aff0;
@@ -457,16 +458,51 @@ img {
     .container {
         max-width: 100%;
     }
-    .header_sup {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-top: -22px;
-        margin-left: -62.5px;
-        &__text {
-            display: none;
+    .header {
+
+        &_sup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -10px;
+            margin-left: -62.5px;
+            &__text {
+                display: none;
+            }
+        }
+        &_lang-switcher {
+            position: absolute;
+            top: 0;
+            right: 0;
+            overflow: hidden;
+            height: 70px;
+            width: 90px;
+            z-index: 99;
+            @include transition;
+            &.open {
+                height: 170px;
+            }
+            &__item {
+                position: absolute;
+                top: 70px;
+                line-height: 70px;
+                @include font($grey, 12pt, 600);
+                display: block;
+                text-transform: uppercase;
+                text-decoration: none;
+                margin: 0;
+                padding: 0px 30px;
+                background: $w;
+                &.active {
+                    top: 0;
+                    text-decoration: none;
+                    color: $lang_purple;
+                    background: $lg_switch_bg;
+                }
+            }
         }
     }
+
     #s1 {
         max-height: 900px;
         .container {
