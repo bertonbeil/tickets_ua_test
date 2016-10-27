@@ -18,7 +18,7 @@ $purple: #112a80;
 $dots_purple: #ac3697;
 $lang_purple: #ab3496;
 $s_title_bd: #00aded;
-
+$s_padding: 100px 0;
 
 @mixin font($color, $size, $weight: 400) {
     @if $weight != "" {
@@ -56,7 +56,9 @@ $s_title_bd: #00aded;
 }
 
 * {
-  box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -112,6 +114,10 @@ body {
     }
 }
 
+#s2, #s3, #s5 {
+    padding: 100px 0;
+}
+
 #s1 {
     background: $bg_s1;
     width: 100%;
@@ -149,7 +155,6 @@ body {
 }
 
 #s2 {
-    padding: 100px 0;
     background: $w;
 }
 .offer_text {
@@ -166,7 +171,7 @@ body {
 
 #s3 {
     background: $bg_grey;
-    padding: 100px 0;
+    overflow: hidden;
 }
 .info_text {
     @include font($b, 13pt);
@@ -214,26 +219,10 @@ body {
 #s4 {
     background: $blue_bg;
     padding: 52px 0 110px;
-
+    overflow: hidden;
     .info_text {
         color: $w;
         margin-bottom: 40px;
-    }
-
-    .swiper-pagination {
-        width: 100%;
-        bottom: -65px;
-    }
-    .swiper-pagination-bullet {
-        width: 15px;
-        height: 15px;
-        margin: 0px 5px;
-        opacity: 1;
-        background: $w;
-        @include transition;
-        &-active {
-            background: $dots_purple;
-        }
     }
 }
 
@@ -243,7 +232,7 @@ body {
 }
 
 #s5 {
-    padding: 100px 0;
+
 }
 .round_icons {
     margin-top: 50px;
@@ -296,8 +285,9 @@ body {
 // components
 .container {
     position: relative;
-    width: 960px;
+    width: 980px;
     margin: 0 auto;
+    padding: 0 10px;
     @extend %clearfix;
 }
 section {
@@ -348,6 +338,12 @@ img {
     margin-left: -10px;
     @extend %clearfix;
 }
+.col_1 {
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    float: left;
+}
 .col_2 {
     position: relative;
     width: 50%;
@@ -361,6 +357,29 @@ img {
     float: left;
 }
 
+// pagination
+
+.swiper-pagination {
+    width: 100%;
+    &.one {
+        bottom: -65px;
+    }
+    &.two {
+        bottom: -65px;
+    }
+
+}
+.swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    margin: 0px 5px;
+    opacity: 1;
+    background: $w;
+    @include transition;
+    &-active {
+        background: $dots_purple;
+    }
+}
 
 .btn {
     @include font($blue_btn, 13pt, 600);
@@ -384,5 +403,127 @@ img {
     &:hover, &:active {
         color: $w;
         background: $blue_btn;
+    }
+}
+.mg_50 {margin-bottom: 50px;}
+// media queries
+
+// tablets || netbooks
+@media (max-width: 1023px) {
+    .container {
+        width: 720px;
+    }
+    .s_title {
+        font-size: 25pt;
+    }
+    .offer_info {
+        margin-bottom: 0;
+    }
+    .offer_text {
+        font-size: 14pt;
+    }
+    .jumbotron_sky {
+        height: 400px;
+    }
+    .jumbotron .plan {
+        margin: 0;
+        width: 600px;
+    }
+    .bubble {
+        margin-bottom: 50px;
+        width: 270px;
+    }
+    .intro {
+        margin-bottom: 100px;
+    }
+    .intro_st {
+        font-size: 41pt;
+    }
+    .intro_nd {
+        font-size: 20pt;
+    }
+    .person {
+        right: -100px;
+        height: 600px;
+    }
+}
+
+
+// mobile
+@media (max-width: 767px) {
+    .sm_hiden {
+        display: none;
+    }
+    .container {
+        max-width: 100%;
+    }
+    .header_sup {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -22px;
+        margin-left: -62.5px;
+        &__text {
+            display: none;
+        }
+    }
+    #s1 {
+        max-height: 900px;
+        .container {
+            padding: 0;
+        }
+    }
+    .intro {
+        position: relative;
+        width: 100%;
+        padding: 60px 50px;
+        z-index: 2;
+        background: $bg_grey;
+        margin-top: 400px;
+        margin-bottom: 0;
+        &_st {
+            margin-top: 0;
+        }
+    }
+    .bubble {
+        display: none;
+    }
+    .person {
+        top: -20px;
+        right: 0;
+        left: 0;
+        height: 470px;
+        background-position: -110px center;
+    }
+    .s_title {
+        font-size: 18pt;
+    }
+    .offer_text {
+        padding: 0 20px;
+        margin-bottom: 50px;
+    }
+    .offer_info {
+        font-size: 14pt;
+        line-height: 1.6;
+    }
+    #s2 {
+        padding: 100px 20px;
+    }
+    .jumbotron {
+        max-height: 350px;
+        .plan {
+            margin: 0;
+            padding: 20px;
+            max-height: 350px;
+            width: auto;
+        }
+    }
+    #s3{
+        .container {
+            padding: 0;
+        }
+    }
+    .jumbotron_text {
+        padding: 0 20px;
     }
 }
